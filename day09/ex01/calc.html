@@ -1,0 +1,99 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+	<meta content="utf-8" http-equiv="encoding">
+	<title>The lamest calculator</title>
+	<style type="text/css">
+		#calculator {
+			position: fixed;
+			background-color: blue;
+			top: 50%;
+			left: 50%;
+			width: 30em;
+			height: : 30em;
+			margin-top: -15em;
+			margin-left: -15em;
+			padding: 1em;
+		}
+		h5 {
+			color: white;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+
+	<form name="calculator" id="calculator" enctype="multipart/form-data" method="post" action="javascript:calc(this);">
+		<h5>Quick and easy</h5>
+		<input type="text" name="left" value="0" />
+		<select name="op" value="">
+			<option value="add" selected>+</option>
+			<option value="sub">-</option>
+			<option value="mult">*</option>
+			<option value="div">/</option>
+			<option value="mod">%</option>
+		</select>
+		<input type="text" name="right" value="0" />
+		<input type="submit" value="Try me!" />
+	</form>
+
+
+	<script>
+
+		setInterval(() => {
+			alert("Please, use me...");
+		}, 30000);
+
+		var calc = () => {
+
+			var form = document.forms["calculator"];
+			var left = Number(form.left.value);
+			var right = Number(form.right.value);
+			var op = form.op.value;
+
+			if (!Number.isInteger(left) || left < 0 || !Number.isInteger(right) || right < 0) {
+				console.log("Error :(");
+				alert("Error :(");
+			}
+			else {
+
+				if (op === "add") {
+					console.log(left + right);
+					alert(left + right);
+				}
+				else if (op === "sub") {
+					console.log(left - right);
+					alert(left - right);
+				}
+				else if (op === "mult") {
+					console.log(left * right);
+					alert(left * right);
+				}
+				else if (op === "div") {
+					if (right === 0) {
+						console.log("It's over 9000!");
+						alert("It's over 9000!");
+					}
+					else {
+						console.log(left / right);
+						alert(left / right);						
+					}
+				}
+				else if (op === "mod") {
+					if (right === 0) {
+						console.log("It's over 9000!");
+						alert("It's over 9000!");
+					}
+					else {
+						console.log(left % right);
+						alert(left % right);						
+					}
+				}
+			}
+
+		}
+
+	</script>
+
+</body>

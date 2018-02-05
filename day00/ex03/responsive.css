@@ -1,0 +1,75 @@
+body {
+	text-align: center;
+	color: rgba(255, 255, 255, 0.85);
+	background-image: url("bg.jpg");
+	background-size: cover;
+}
+#atom {
+	height: 23vmin;
+}
+.container {
+	margin-bottom: 8vh;
+	width: 100%;
+}
+.boxxy {
+	border: 2px solid rgba(255, 255, 255, 0.5);
+	margin: 2px;
+}
+.row {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	align-items: flex-start;
+}
+.element {
+	flex: 1 0 auto;
+	flex-flow: column nowrap;
+	max-width: 5.0%;
+	font-size: 2vmin;
+}
+.space {
+	border: none;
+}
+.atomic-num {
+	padding-right: 2px;
+	text-align: right;
+}
+.atomic-sym {
+	font-weight: bold;
+	font-size: 3vmin;
+}
+.atomic-weight {
+	padding-left: 2px;
+	text-align: left;
+	/*font-family: courier;*/
+}
+.non-metal {
+	background-color: rgba(255, 0, 0, 0.2);
+}
+.noble-gas {
+	background-color: rgba(255, 0, 235, 0.2);
+}
+.alkali {
+	background-color: rgba(185, 85, 45, 0.2);
+}
+.earth {
+	background-color: rgba(245, 1615, 0, 0.2);
+}
+.metalloid {
+	background-color: rgba(145, 185, 145, 0.2);
+}
+.trans {
+	background-color: rgba(0, 85, 245, 0.2);
+}
+.post-trans {
+	background-color: rgba(245, 85, 245, 0.2);
+}
+.lanthanoid {
+	background-color: rgba(145, 185, 145, 0.2);
+}
+.actinoid {
+	background-color: rgba(145, 285, 145, 0.2);
+}
+.other {
+	background-color: rgba(85, 255, 85, 0.2);
+}

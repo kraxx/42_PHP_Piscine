@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+	<meta content="utf-8" http-equiv="encoding">
+	<title>Balloon Pop</title>
+	<style type="text/css">
+		#balloon {
+			border-radius: 50%;
+			position: fixed;
+			top: 50%;
+			left: 50%;
+		}
+	</style>
+</head>
+<body>
+
+	<div id="balloon"></div>
+
+	<script>
+		
+		var nextColour = {
+			"red" : "green", 
+			"green"	: "blue",
+			"blue" : "red"
+		};
+
+		var balloon = document.getElementById("balloon");
+		balloon.style.backgroundColor = "red";
+		balloon.style.width = balloon.style.height = "200px";
+		balloon.style.marginLeft = balloon.style.marginTop = "-100px";
+
+		balloon.onclick = () => {
+
+			var col = balloon.style.backgroundColor;
+			var width = parseInt(balloon.style.width, 10);
+
+			balloon.style.backgroundColor = nextColour[col];
+
+			if (width < 420)
+				balloon.style.height = balloon.style.width = String(width + 10) + "px";
+			else
+				balloon.style.height = balloon.style.width = "200px";
+
+			balloon.style.marginLeft = balloon.style.marginTop = String(parseInt(balloon.style.width, 10) / -2) + "px";
+		};
+
+		balloon.onmouseout = () => {
+
+			var col = balloon.style.backgroundColor;
+			var width = parseInt(balloon.style.width, 10);
+
+			balloon.style.backgroundColor = Object.keys(nextColour).find(key => nextColour[key] === col);
+
+			if (width > 200)
+				balloon.style.width = balloon.style.height = String(width - 5) + "px";
+
+			balloon.style.marginLeft = balloon.style.marginTop = String(parseInt(balloon.style.width, 10) / -2) + "px";
+		};
+
+	</script>
+
+</body>
